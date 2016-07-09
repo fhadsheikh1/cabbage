@@ -1,0 +1,11 @@
+{
+  "name": "cabbage",
+  "version": "1.0.0",
+  "description": "Sampler Code Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fhad Sheikh",
+  "license": "ISC"
+}
