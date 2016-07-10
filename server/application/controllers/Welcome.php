@@ -10,4 +10,8 @@ class Welcome extends CI_Controller {
     {
         echo "<h1>Welcome to API</h1>";
     }
+
+    public function test(){
+        echo 'test method on welcome controller';
+    }
 }
