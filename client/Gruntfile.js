@@ -39,7 +39,7 @@ module.exports = function(grunt){
 
         wiredep: {
             dist: {
-                src: ['app/index.html']
+                src: ['index.html']
             }
         },
 
