@@ -37,6 +37,15 @@ module.exports = function(grunt){
             }
         },
 
+        compass: {
+            dev: {
+                options: {
+                    sassDir: 'app/common/styles',
+                    cssDir: 'app/common/styles'
+                }
+            }
+        },
+
         wiredep: {
             dist: {
                 src: ['index.html']
@@ -65,12 +74,20 @@ module.exports = function(grunt){
                 options: {
                     livereload: true
                 }
+            },
+            scss: {
+                files: ['app/**/*.scss'],
+                tasks: ['compass:dev'],
+                options: {
+                    livereload: true
+                }
             }
         }
 
     });
 
     grunt.loadNpmTasks('grunt-wiredep');
+    grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
@@ -81,6 +98,7 @@ module.exports = function(grunt){
 
     grunt.registerTask('dev', [
         'wiredep',
+        'compass',
         'connect:dev',
         'watch'
     ])
