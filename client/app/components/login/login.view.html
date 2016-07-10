@@ -1,0 +1,132 @@
+<div class="login-page">
+  <div class="form">
+
+    <div class="box">
+      <div class="cell-12">
+        <div class="logo" style="margin-bottom:20px"><img src="app/common/images/cabbage_logo.png" class="logo-img"> Cabbage</div>
+      </div>
+    </div>
+
+
+    <form  name="registrationForm" ng-show="login.showRegistrationForm" class="register-form">
+
+      <!-- First Name -->
+      <input 
+        ng-class="{ 'bad' : registrationForm.firstname.$invalid && !registrationForm.firstname.$pristine ,
+                    'good' : registrationForm.firstname.$valid && !registrationForm.firstname.$pristine }" 
+        ng-required="true" 
+        type="text" 
+        name="firstname" 
+        ng-model="login.registration.firstname" 
+        placeholder="First Name" 
+        autofocus>
+
+      <p ng-show="registrationForm.firstname.$invalid && !registrationForm.firstname.$pristine" class="validateError">
+        First Name is required
+      </p>
+
+      <!-- Last Name -->
+      <input 
+        ng-class="{ 'bad' : registrationForm.lastname.$invalid && !registrationForm.lastname.$pristine ,
+                    'good' : registrationForm.lastname.$valid && !registrationForm.lastname.$pristine }" 
+        ng-required="true" 
+        type="text" 
+        name="lastname" 
+        ng-model="login.registration.lastname" 
+        placeholder="Last Name" 
+        autofocus>
+
+      <p ng-show="registrationForm.lastname.$invalid && !registrationForm.lastname.$pristine" class="validateError">
+        Last Name is required
+      </p>
+
+      <!-- Email -->
+      <input 
+        ng-class="{ 'bad' : registrationForm.email.$invalid && !registrationForm.email.$pristine ,
+                    'good' : registrationForm.email.$valid && !registrationForm.email.$pristine }" 
+        ng-required="true" 
+        type="email" 
+        name="email" 
+        ng-model="login.registration.email" 
+        placeholder="Email" 
+        autofocus>
+
+      <p ng-show="registrationForm.email.$invalid && !registrationForm.email.$pristine" class="validateError">
+        Email is required
+      </p>
+
+      <!-- Password -->
+      <input 
+        ng-class="{ 'bad' : registrationForm.password.$invalid && !registrationForm.password.$pristine ,
+                    'good' : registrationForm.password.$valid && !registrationForm.password.$pristine }" 
+        ng-required="true" 
+        type="password" 
+        name="password" 
+        ng-model="login.registration.password" 
+        placeholder="Password" 
+        autofocus>
+
+      <p ng-show="registrationForm.password.$invalid && !registrationForm.password.$pristine" class="validateError">
+        Password is required
+      </p>
+
+      <!-- Confirm Password -->
+      <input 
+        ng-class="{ 'bad' : registrationForm.confirm.$invalid && !registrationForm.confirm.$pristine ,
+                    'good' : registrationForm.confirm.$valid && !registrationForm.confirm.$pristine }" 
+        ng-required="true" 
+        type="password" 
+        name="confirm" 
+        ng-model="login.registration.confirm" 
+        placeholder="Confirm Password" 
+        match="login.registration.password"
+        autofocus>
+
+      <p ng-show="registrationForm.password.$invalid && !registrationForm.password.$pristine" class="validateError">
+        Password does not match
+      </p>
+
+      <button>create</button>
+
+      <p class="message">Already registered? <a href="#" ng-click="login.toggleRegistrationForm()">Sign In</a></p>
+    </form>
+
+    <form name="userForm" ng-hide="login.showRegistrationForm" class="login-form" novalidate>
+
+      <!--email-->
+      <input 
+        ng-class="{ 'bad' : userForm.email.$invalid && !userForm.email.$pristine ,
+                    'good' : userForm.email.$valid && !userForm.email.$pristine }" 
+        ng-required="true" 
+        type="email" 
+        name="email" 
+        ng-model="login.credentials.email" 
+        placeholder="Email" 
+        autofocus>
+
+      <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="validateError">
+        Valid email is required
+      </p>
+
+      <!--Password-->
+        <input 
+          ng-class="{ 'bad' : userForm.password.$invalid && !userForm.password.$pristine,
+                      'good' : userForm.password.$valid && !userForm.password.$pristine }" 
+          ng-required="true"
+          type="password" 
+          name="password" 
+          ng-model="login.credentials.password"
+          placeholder="Password">
+
+        <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="validateError">
+          Password is required
+        </p>
+
+
+      <button style="width:49%">Login</button>
+      <button style="width:49%" ng-click="login.toggleRegistrationForm()">Register</button>
+    </form>
+
+
+  </div>
+</div>

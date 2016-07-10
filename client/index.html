@@ -13,7 +13,7 @@
     </head>
     <body ng-app="cabbage" ng-controller="MainCtrl as main">
 
-        <header></header>
+        <header ng-if="main.isLoggedIn"></header>
 
         <div ui-view></div>
 
@@ -21,6 +21,7 @@
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/angular-validation-match/dist/angular-validation-match.min.js"></script>
         <!-- endbower -->
 
         <script src="app/app.module.js"></script>
@@ -30,6 +31,10 @@
         <script src="app/components/footer/footer.drv.js"></script>
 
         <script src="app/components/main/main.ctrl.js"></script>
+        <script src="app/components/main/main.srv.js"></script>
+
+        <script src="app/components/login/login.ctrl.js"></script>
+        <script src="app/components/login/login.srv.js"></script>
         
         <script src="app/components/home/home.ctrl.js"></script>
         <script src="app/components/home/home.srv.js"></script>

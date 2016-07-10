@@ -12,6 +12,12 @@
             .otherwise('/');
 
             $stateProvider
+            .state('login', {
+                url: '/login',
+                templateUrl: 'app/components/login/login.view.html',
+                controller: 'LoginCtrl',
+                controllerAs: 'login'
+            })
             .state('home', {
                 abstract: true,
                 url: '/',
