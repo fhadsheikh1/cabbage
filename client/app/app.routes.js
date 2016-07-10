@@ -9,7 +9,18 @@
         function config($stateProvider, $urlRouterProvider, $locationProvider){
 
             $urlRouterProvider
-            .otherwise('home');
+            .otherwise('/');
+
+            $stateProvider
+            .state('home', {
+                url: '/',
+                templateUrl: 'app/components/home/home.view.html',
+                controller: 'HomeCtrl',
+                controllerAs: 'home'
+            })
+
+            $locationProvider
+            .html5Mode(true);
 
         }
 
