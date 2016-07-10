@@ -25,12 +25,12 @@ module.exports = function(grunt){
                     port: 9000,
                     hostname: 'localhost',
                     livereload:true,
-                    base: 'app',
+                    base: '../client',
                     middleware: function(connect){
                         return [
                             modRewrite(['^[^\\.]*$ /index.html [L]']),
                             connect().use('/bower_components', serveStatic('./bower_components')),
-                            serveStatic('app')
+                            serveStatic('../client')
                         ];
                     }
                 }
@@ -47,6 +47,24 @@ module.exports = function(grunt){
             bower: {
                 files: ['bower.json'],
                 tasks: ['wiredep']
+            },
+            files: {
+                files: ['index.html'],
+                options: {
+                    livereload: true
+                }
+            },
+            js: {
+                files: ['app/**/*.*.js'],
+                options: {
+                    livereload: true
+                }
+            },
+            html: {
+                files: ['app/**/*.*.html'],
+                options: {
+                    livereload: true
+                }
             }
         }
 
