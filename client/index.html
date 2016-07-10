@@ -6,12 +6,14 @@
         <base href="/">
         <link rel="shortcut icon" href="app/common/images/cabbage.ico" />
 
-        <link rel="stylesheet" href="app/common/styles/style.css">
+        <link rel="stylesheet" href="app/common/styles/main.css">
 
         <!-- bower:css -->
         <!-- endbower -->
     </head>
     <body ng-app="cabbage" ng-controller="MainCtrl as main">
+
+        <header></header>
 
         <div ui-view></div>
 
@@ -24,9 +26,15 @@
         <script src="app/app.module.js"></script>
         <script src="app/app.routes.js"></script>
         
+        <script src="app/components/header/header.drv.js"></script>
+        <script src="app/components/footer/footer.drv.js"></script>
+
         <script src="app/components/main/main.ctrl.js"></script>
         
         <script src="app/components/home/home.ctrl.js"></script>
         <script src="app/components/home/home.srv.js"></script>
+        
+        <script src="app/components/home/users/users.ctrl.js"></script>
+        <script src="app/components/home/users/users.srv.js"></script>
     </body>
 </html>
