@@ -7,6 +7,7 @@ class User_model extends CI_Model {
     public function __construct()
     {
         parent::__construct();
+        $this->load->database();
     }
 
     public function createUser($firstname, $lastname, $email, $password, $balance)
@@ -22,6 +23,16 @@ class User_model extends CI_Model {
 
         $this->db->insert('users', $user);
 
+    }
+
+    public function getUser($userid)
+    {
+        $this->db->select('*');
+        $this->db->from('users');
+        $this->db->where('userid', $userid);
+        $query = $this->db->get();
+
+        return $query->row();
     }
 
 
