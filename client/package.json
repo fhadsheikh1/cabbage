@@ -9,6 +9,9 @@
   "author": "Fhad Sheikh",
   "license": "ISC",
   "devDependencies": {
-    "grunt-wiredep": "^3.0.1"
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-wiredep": "^3.0.1",
+    "serve-static": "^1.11.1"
   }
 }
