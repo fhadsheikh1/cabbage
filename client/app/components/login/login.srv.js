@@ -6,11 +6,11 @@
         .module('cabbage')
         .factory('loginSrv', loginSrv);
 
-        function loginSrv(){
+        function loginSrv($q, $http, SERVER){
 
             var service = {
 
-                validateEmptyFields: validateEmptyFields
+                createUser: createUser
 
             }
 
@@ -18,17 +18,26 @@
 
             ///////////////
 
+            function createUser(firstname, lastname, email, password){
 
-            function validateEmptyFields(fields){
-                for (var i = 0; i < fields.length; i++){
+                var data = $.param({
+                    firstname: firstname,
+                    lastname: lastname,
+                    email: email,
+                    password: password
+                })
 
-                    if(fields[i].$pristine){
+                var deferred = $q.defer();
 
-                        fields[i].$invalid = true;
-                        fields[i].$pristine = false;
+                $http.post(SERVER.url + 'user', data)
+                .then(function(res){
+                    deferred.resolve();   
+                }, function(){
+                    deferred.reject();
+                })
 
-                    }
-                }
+                return deferred.promise;
+
             }
 
         }

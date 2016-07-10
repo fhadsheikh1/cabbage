@@ -86,7 +86,10 @@
         Password does not match
       </p>
 
-      <button>create</button>
+      <button ng-hide="login.busy" ng-click="login.registerUser()" >create</button>
+      <button ng-show="login.busy">
+        <i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
+      </button>
 
       <p class="message">Already registered? <a href="#" ng-click="login.toggleRegistrationForm()">Sign In</a></p>
     </form>

@@ -6,7 +6,7 @@
         .module('cabbage')
         .config(config);
 
-        function config($stateProvider, $urlRouterProvider, $locationProvider){
+        function config($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider){
 
             $urlRouterProvider
             .otherwise('/');
@@ -30,7 +30,10 @@
                 templateUrl: 'app/components/home/users/users.view.html',
                 controller: 'UsersCtrl',
                 controllerAs: 'users'
-            })
+            });
+
+            // Send Authorization header with JWT with each request
+            $httpProvider.interceptors.push('authInjector');
 
             $locationProvider
             .html5Mode(true);
