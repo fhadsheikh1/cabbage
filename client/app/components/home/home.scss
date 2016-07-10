@@ -1,5 +1,15 @@
-$primary: red;
+@import url(https://fonts.googleapis.com/css?family=Lato);
 
-.homeTitle{
-    color:$primary;
+.greeting{
+    font-family: 'Lato', sans-serif;
+    font-size:32pt;
+    padding: 40px 0px 0px 0px;
+    margin-bottom: 0px;  
+}
+
+.sub-greeting{
+    font-family: 'Lato', sans-serif;
+    font-size:16pt;
+    margin-top: 5px;
+    margin-bottom: 40px;
 }

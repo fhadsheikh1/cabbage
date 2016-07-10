@@ -13,10 +13,17 @@
 
             $stateProvider
             .state('home', {
+                abstract: true,
                 url: '/',
                 templateUrl: 'app/components/home/home.view.html',
                 controller: 'HomeCtrl',
                 controllerAs: 'home'
+            })
+            .state('home.users', {
+                url: '',
+                templateUrl: 'app/components/home/users/users.view.html',
+                controller: 'UsersCtrl',
+                controllerAs: 'users'
             })
 
             $locationProvider

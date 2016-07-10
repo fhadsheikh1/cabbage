@@ -1,0 +1,64 @@
+.wrapper-full {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.wrapper {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 970px;
+}
+
+.box {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.clear {
+    clear:both;
+}
+
+.cell-1, .cell-2, .cell-3, .cell-4, .cell-5, .cell-6, .cell-7, .cell-8, .cell-9, .cell-10, .cell-11, .cell-12 {
+float: left;
+min-height:1px;
+}
+.cell-12 {
+width: 100%;
+}
+.cell-11 {
+width: 91.66666667%;
+}
+.cell-10 {
+width: 83.33333333%;
+}
+.cell-9 {
+width: 75%;
+}
+.cell-8 {
+width: 66.66666667%;
+}
+.cell-7 {
+width: 58.33333333%;
+}
+.cell-6 {
+width: 50%;
+}
+.cell-5 {
+width: 41.66666667%;
+}
+.cell-4 {
+width: 33.33333333%;
+}
+.cell-3 {
+width: 25%;
+}
+.cell-2 {
+width: 16.66666667%;
+}
+.cell-1 {
+width: 8.33333333%;
+}
