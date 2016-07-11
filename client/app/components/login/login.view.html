@@ -65,11 +65,12 @@
         type="password" 
         name="password" 
         ng-model="login.registration.password" 
+        ng-minlength="6" 
         placeholder="Password" 
         autofocus>
 
       <p ng-show="registrationForm.password.$invalid && !registrationForm.password.$pristine" class="validateError">
-        Password is required
+        Password must be a <br> minimum of 6 characters
       </p>
 
       <!-- Confirm Password -->

@@ -43,6 +43,7 @@
                 $rootScope.$on('userLoggedIn',function(event,args){
                     if(args){
                         vm.isLoggedIn = true;
+                        vm.user = userSrv.getUser();
                     } else {
                         vm.isLoggedIn = false;
                     }
@@ -53,12 +54,13 @@
                 moneySrv.checkBalance()
                 .then(function(res){
                     vm.balance = res.balance;
+                    $rootScope.balance = res.balance;
                 })
             }
 
             function watchBalance(){
                 $rootScope.$on('updatedBalance', function(event, args){
-                    vm.balance = args.balance;
+                    checkBalance();
                 })
             }
 

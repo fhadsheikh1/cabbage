@@ -23,4 +23,41 @@
     </div>
     <div class="clear"></div>
 
+
+</div>
+    <div class="wrapper-full" style="margin-top:50px">
+    <div class="box">
+        <div class="cell-12 users-section fill-window">
+            <div ng-hide="profile.busy" class="wrapper">
+                <h3 class="center users-title">Last 5 Transactions</h3>  
+                <div  class="tbl-header">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th>Sender</th>
+                                <th>Recipient</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div  class="tbl-content">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
+                            <tr ng-repeat="transaction in profile.transactions">
+                                <td>{{transaction.sender}}</td>
+                                <td>{{transaction.recipient}}</td>
+                                <td>${{transaction.amount}}</td>
+                                <td>{{transaction.date}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div ng-show="profile.busy" class="center busy">
+                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+            </div>
+        </div>
+    </div>
 </div>

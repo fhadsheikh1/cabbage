@@ -9,7 +9,8 @@
         function moneySrv($q, $http, SERVER, jwtHelper){
 
             var service = {
-                checkBalance: checkBalance
+                checkBalance: checkBalance,
+                sendMoney: sendMoney
             }
 
             return service;
@@ -30,6 +31,28 @@
                 return deferred.promise;
 
             }
+
+            function sendMoney(amount, toId){
+
+                var data = $.param({
+                    amount: amount,
+                    to: toId
+                })
+
+                var deferred = $q.defer();
+
+                $http.post(SERVER.url + 'money', data)
+                .then(function(res){
+                    deferred.resolve();
+                }, function(err){
+                    deferred.reject();
+                })
+
+                return deferred.promise;
+
+            }
+
+
 
 
         }

@@ -11,7 +11,8 @@
             'validation.match',
             'angular-jwt',
             'angular-storage',
-            'counter'
+            'counter',
+            'oitozero.ngSweetAlert'
         ])
 
 })();

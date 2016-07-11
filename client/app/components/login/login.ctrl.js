@@ -34,7 +34,12 @@
                     vm.registration.password
                 ).then(function(res){
                     vm.busy = false;
-                    console.log(res);
+                    
+                    authSrv.login(vm.registration.email, vm.registration.password)
+                    .then(function(res){
+                        $state.go('home.users');
+                    })
+
                 }, function(err){
                     vm.busy = false;
                     console.log(err);
