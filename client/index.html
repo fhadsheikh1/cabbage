@@ -6,13 +6,17 @@
         <base href="/">
         <link rel="shortcut icon" href="app/common/images/cabbage.ico" />
 
+        <!-- build:css styles/main.css -->
         <link rel="stylesheet" href="app/common/styles/main.css">
-
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <!-- endbuild -->
 
+        <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
         <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css" />
         <!-- endbower -->
+        <!-- endbuild -->
+
     </head>
     <body ng-app="cabbage" ng-controller="MainCtrl as main">
 
@@ -20,6 +24,7 @@
 
         <div ui-view></div>
 
+        <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/angular/angular.js"></script>
@@ -31,7 +36,9 @@
         <script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
         <script src="bower_components/ngSweetAlert/SweetAlert.js"></script>
         <!-- endbower -->
+        <!-- endbuild -->
 
+        <!-- build:js scripts/scripts.js -->
         <script src="app/app.module.js"></script>
         <script src="app/app.routes.js"></script>
         <script src="app/app.run.js"></script>
@@ -60,5 +67,6 @@
         
         <script src="app/components/home/users/users.ctrl.js"></script>
         <script src="app/components/home/users/users.srv.js"></script>
+        <!-- endbuild -->
     </body>
 </html>

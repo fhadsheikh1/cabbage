@@ -9,10 +9,21 @@
   "author": "Fhad Sheikh",
   "license": "ISC",
   "devDependencies": {
+    "grunt-angular-templates": "^1.0.4",
+    "grunt-clean": "^0.4.0",
+    "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-htmlmin": "^1.4.0",
     "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-filerev": "^2.3.1",
+    "grunt-ng-annotate": "^2.0.2",
+    "grunt-usemin": "^3.1.1",
     "grunt-wiredep": "^3.0.1",
     "serve-static": "^1.11.1"
   }
