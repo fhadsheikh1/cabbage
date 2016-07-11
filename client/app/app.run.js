@@ -5,7 +5,7 @@
         .run(run);
 
         
-        function run($rootScope, $location, authSrv, $state){
+        function run($rootScope, $location, authSrv, moneySrv, $state){
 
             $rootScope.$on('$routeChangeError', function(){
                 $state.go('login');
@@ -16,6 +16,7 @@
             function stateChangeStart(event, toState){
                 authentication(event, toState);
                 loggedInRedirect(event, toState);
+                checkBalance();
             }
             
             function authentication(event, toState){
@@ -42,6 +43,21 @@
                    })
 
                }
+
+           }
+
+           function checkBalance(event, toState){
+
+               authSrv.checkLogin()
+               .then(function(res){
+
+
+                moneySrv.checkBalance()
+                .then(function(res){
+                    $rootScope.$broadcast('updatedBalance', res);
+                })
+
+               })
 
            }
             

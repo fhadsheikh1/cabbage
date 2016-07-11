@@ -6,7 +6,7 @@
         .module('cabbage')
         .controller('MainCtrl', mainCtrl);
 
-        function mainCtrl(authSrv, userSrv, $rootScope){
+        function mainCtrl(authSrv, userSrv, moneySrv, $rootScope){
 
             var vm = this;
             vm.logout = logout;
@@ -25,6 +25,8 @@
             function load(){
                 checkLogin();
                 watchLogin();
+                checkBalance();
+                watchBalance();
             }
 
             function checkLogin(){
@@ -44,6 +46,19 @@
                         vm.isLoggedIn = false;
                     }
                 });
+            }
+
+            function checkBalance(){
+                moneySrv.checkBalance()
+                .then(function(res){
+                    vm.balance = res.balance;
+                })
+            }
+
+            function watchBalance(){
+                $rootScope.$on('updatedBalance', function(event, args){
+                    vm.balance = args.balance;
+                })
             }
 
             

@@ -5,7 +5,7 @@
         .module('cabbage')
         .factory('authInjector', authInjector);
 
-        function authInjector(){
+        function authInjector(store){
 
             var authInjector = {
                 request: request
@@ -17,10 +17,13 @@
 
             function request(config){
                 
-//                config.headers.Authorization = 'Bearer ' + localStorage.getItem('jwt');
+                if(store.get('jwt')){
+                    config.headers.Authorization = store.get('jwt').replace(/"/g,"");
+                }
+                
                 config.headers.accept = 'application/json';
                 config.headers['Content-Type'] = 'application/x-www-form-urlencoded;';
-
+                
                 return config;
 
             }
