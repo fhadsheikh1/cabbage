@@ -23,13 +23,15 @@
                 url: '/',
                 templateUrl: 'app/components/home/home.view.html',
                 controller: 'HomeCtrl',
-                controllerAs: 'home'
+                controllerAs: 'home',
+                protected: true
             })
             .state('home.users', {
                 url: '',
                 templateUrl: 'app/components/home/users/users.view.html',
                 controller: 'UsersCtrl',
-                controllerAs: 'users'
+                controllerAs: 'users',
+                protected: true
             });
 
             // Send Authorization header with JWT with each request

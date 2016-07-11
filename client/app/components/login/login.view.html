@@ -6,7 +6,9 @@
         <div class="logo" style="margin-bottom:20px"><img src="app/common/images/cabbage_logo.png" class="logo-img"> Cabbage</div>
       </div>
     </div>
+    <div class="clear"></div>
 
+    <div ng-show="login.error" class="login-error">{{login.error}}</div>
 
     <form  name="registrationForm" ng-show="login.showRegistrationForm" class="register-form">
 
@@ -86,7 +88,7 @@
         Password does not match
       </p>
 
-      <button ng-hide="login.busy" ng-click="login.registerUser()" >create</button>
+      <button ng-hide="login.busy" ng-click="login.registerUser()" ng-disabled="registrationForm.$invalid">create</button>
       <button ng-show="login.busy">
         <i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
       </button>
@@ -126,8 +128,11 @@
         </p>
 
 
-      <button style="width:49%">Login</button>
-      <button style="width:49%" ng-click="login.toggleRegistrationForm()">Register</button>
+      <button ng-hide="login.busy" style="width:49%" ng-click="login.loginUser()" ng-disabled="userForm.$invalid">Login</button>
+      <button ng-hide="login.busy" style="width:49%" ng-click="login.toggleRegistrationForm()">Register</button>
+      <button ng-show="login.busy">
+        <i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
+      </button>
     </form>
 
 

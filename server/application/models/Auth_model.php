@@ -20,6 +20,10 @@ class Auth_model extends CI_Model {
         $query = $this->db->get_where('users', $where);
         $user = $query->row();
 
+        if(!$user){
+            return false;
+        }
+
         if(!password_verify($password, $user->password)){
             return false;
         } else {

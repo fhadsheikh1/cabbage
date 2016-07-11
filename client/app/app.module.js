@@ -8,7 +8,9 @@
     angular
         .module('cabbage', [
             'ui.router',
-            'validation.match'
+            'validation.match',
+            'angular-jwt',
+            'angular-storage'
         ])
 
 })();

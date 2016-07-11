@@ -30,7 +30,7 @@ class auth extends REST_Controller {
         $user = $this->Auth_model->authenticate($email,$password);
 
         if(!$user){
-            $this->response($password, 403);
+            $this->response('Login_Failed', 200);
         }
 
         $token = array();
@@ -38,6 +38,7 @@ class auth extends REST_Controller {
         $token['firstname'] = $user->firstname;
         $token['lastname'] = $user->lastname;
         $token['email'] = $user->email;
+        $token['balance'] = $user->balance;
 
         $jwt = JWT::encode($token, $this->config->item('jwt_key'));
 
