@@ -11,6 +11,7 @@
             var vm = this;
             vm.logout = logout;
             vm.user = userSrv.getUser();
+            vm.balance = 0;
 
             vm.isLoggedIn = false;
 

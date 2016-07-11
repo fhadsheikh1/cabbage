@@ -204,6 +204,9 @@ section {
   margin-bottom: 10px;
   color: green; }
 
+.profile-title {
+  margin-top: 70px; }
+
 body {
   margin: 0px;
   background-color: #F9F9F9;

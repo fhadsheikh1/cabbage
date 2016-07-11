@@ -2,11 +2,15 @@
     <div class="wrapper">
         <div class="box">
             <div class="cell-5">
-                <div class="logo"><img src="app/common/images/cabbage_logo.png" class="logo-img"> Cabbage</div>
+                <div class="logo">
+                    <a ui-sref="home.users">
+                        <img src="app/common/images/cabbage_logo.png" class="logo-img"> Cabbage
+                    </a>
+                </div>
             </div>
             <div class="cell-7">
                 <div class="profile-menu">
-                    My Profile | <a href="#" ng-click="main.logout()">Sign Out</a></div>
+                    <a ui-sref="profile">My Profile</a> | <a href="#" ng-click="main.logout()">Sign Out</a></div>
             </div>
         </div>
         <div class="clear"></div>

@@ -10,7 +10,8 @@
             'ui.router',
             'validation.match',
             'angular-jwt',
-            'angular-storage'
+            'angular-storage',
+            'counter'
         ])
 
 })();

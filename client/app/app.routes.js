@@ -18,6 +18,13 @@
                 controller: 'LoginCtrl',
                 controllerAs: 'login'
             })
+            .state('profile', {
+                url: '/profile',
+                templateUrl: 'app/components/profile/profile.view.html',
+                controller: 'ProfileCtrl',
+                controllerAs: 'profile',
+                protected: true
+            })
             .state('home', {
                 abstract: true,
                 url: '/',
